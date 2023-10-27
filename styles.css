@@ -1,0 +1,19 @@
+*{
+    padding: 20px;
+    margin: auto;
+}
+.outerbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: thin;
+    margin: auto;
+    flex-wrap: wrap;
+}
+.numbers{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
