@@ -29,5 +29,4 @@ btn.forEach(button => button.addEventListener("click", () =>{
 
 function joinNumbers(operand){
     
-
 }
