@@ -5,15 +5,54 @@
 .outerbox{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    background-color: #232b33;
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 20px;
     border-width: thin;
     margin: auto;
     flex-wrap: wrap;
+    max-width:  750px;
 }
-.numbers{
+.number{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     flex-wrap: wrap;
+    gap: 5px;
+}
+.signs{
+    display: flex;
+    justify-content:center;
+    gap: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#btn{
+    
+   background-color: #34495e; /* Darker blue */
+  color: #ecf0f1; 
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.clear{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.numbz{
+    display:flex;
+    justify-content: center;
+    gap:10px;
+}
+#clr{
+  background-color: #34495e; /* Darker blue */
+  color: #ecf0f1; 
+  font-size: 1.5em;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s
 }

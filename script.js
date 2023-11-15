@@ -17,6 +17,7 @@ function checkExpression(exp){
     }
     else if (exp =="x"){
         console.log("multiply");
+        
     }
     else if (exp =="="){
         console.log("equals");
