@@ -18,13 +18,14 @@
     flex-direction: column;
     flex-wrap: wrap;
     gap: 5px;
+    padding-top: 0;
 }
 .signs{
     display: flex;
     justify-content:center;
     gap: 10px;
     padding-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 0.5em;
 }
 #btn{
     
@@ -37,6 +38,9 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+#btn:hover {
+    background-color: #1d2b3a;
+  }
 .clear{
     padding-top: 0;
     padding-bottom: 0;
@@ -45,6 +49,7 @@
     display:flex;
     justify-content: center;
     gap:10px;
+    padding-bottom: 0.5em;
 }
 #clr{
   background-color: #34495e; /* Darker blue */
@@ -56,3 +61,13 @@
   cursor: pointer;
   transition: background-color 0.3s
 }
+.display {
+    width: 100%; /* Ensure the display takes 100% width within the outerbox */
+    background-color: #486f96;
+    color: #ecf0f1;
+    font-size: 1.5em;
+    padding: 2px;
+    border-radius: 5px;
+    text-align: right;
+    margin-bottom: 5px;
+  }
