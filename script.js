@@ -1,27 +1,29 @@
 
 const btn = document.querySelectorAll("#btn");
+const operands =document.querySelector("#operand > p")
 
-
+        
 function checkExpression(exp){
     if ((parseInt(exp) == exp) || (exp ==".")){
-        console.log(exp);
+        joinNumbers(exp);
     }
     else if (exp == "+"){
-        console.log("add");
+        console.log("+");
     }
     else if (exp == "-"){
-        console.log("minus");
+        console.log("-");
     }
     else if (exp == "/"){
-        console.log("divide");
+        console.log("/");
     }
     else if (exp =="x"){
-        console.log("multiply");
+        console.log("*");
         
     }
     else if (exp =="="){
         console.log("equals");
         }
+    
 }
 btn.forEach(button => button.addEventListener("click", () =>{
     let expression = button.textContent;
@@ -29,5 +31,13 @@ btn.forEach(button => button.addEventListener("click", () =>{
 }))
 
 function joinNumbers(operand){
+    let value = operands.innerText;
+    value = value + operand;
+    operands.innerText =value;
     
+}
+
+function clear(exp){
+    let value = ''
+    operands.innerText =value;
 }
