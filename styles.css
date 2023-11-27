@@ -1,25 +1,32 @@
 *{
     padding: 20px;
     margin: auto;
+    font-family: 'Nova Square';
+
 }
 .outerbox{
     display: flex;
     flex-direction: column;
-    background-color: #232b33;
+    background-color: #DEDEDC;
     border-style: solid;
     border-radius: 20px;
     border-width: thin;
     margin: auto;
     flex-wrap: wrap;
     max-width:  750px;
+    overflow:auto;
+    position: relative;
+    
 }
 .number{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 2px;
     padding-top: 0;
+    width:90%;
 }
+
 .signs{
     display: flex;
     justify-content:center;
@@ -27,20 +34,32 @@
     padding-top: 0;
     padding-bottom: 0.5em;
 }
-#btn{
+.btn{
     
-   background-color: #34495e; /* Darker blue */
-  color: #ecf0f1; 
-  font-size: 1.2em;
+   background-color: #ADA9A3; /* Darker blue */
+  color: #3B3838; 
+  font-size: 1.5em;
   font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  padding: 25px;
+ 
 }
-#btn:hover {
+.btn:hover {
     background-color: #1d2b3a;
   }
+.clear .btn {
+    background-color:#D2BF91;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px
+}
+.signs .btn{
+    background-color: #696662;
+    color: #FFFFFF;     
+}
 .clear{
     padding-top: 0;
     padding-bottom: 0;
@@ -48,28 +67,22 @@
 .numbz{
     display:flex;
     justify-content: center;
-    gap:10px;
+    gap:5px;
+    flex-wrap: wrap;
     padding-bottom: 0.5em;
 }
-#clr{
-  background-color: #34495e; /* Darker blue */
-  color: #ecf0f1; 
-  font-size: 1.5em;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s
-}
+
 .display {
-    width: 100%; /* Ensure the display takes 100% width within the outerbox */
-    background-color: #486f96;
+    width: 90%; /* Ensure the display takes 100% width within the outerbox */
+    background-color: #B1B4A2;
     color: #ecf0f1;
     font-size: 1.5em;
     padding: 2px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #D5D5C6 ;
     border-radius: 5px;
     text-align: right;
-    margin-bottom: 5px;
   }
 .header{
     text-align: center;

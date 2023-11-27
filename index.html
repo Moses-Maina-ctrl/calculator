@@ -5,39 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
-    
+<link href='https://fonts.googleapis.com/css?family=Nova Square' rel='stylesheet'>    
 </head>
 <body>
   <header class="header">Calculator</header>
       <div class="outerbox">
+        <p>HASIO</p>
         <div class="display">
-          <div class="operand" id = "operand"><p></p></div>
-          <div class="answer"><p></p></div>
+          <div class="equation" id = "equation"><p></p></div>
+          <div class="answer" id ="answer"><p></p></div>
         </div>
         <div class="number">
           <div class="numbz">
-            <button id="btn" type="button">1</button>
-            <button id="btn" type="button">2</button>
-            <button id="btn" type="button">3</button>
-            <button id="btn" type="button">4</button>
-            <button id="btn" type="button">5</button>
-            <button id="btn" type="button">6</button>    
-            <button id="btn" type="button">8</button>
-            <button id="btn" type="button">9</button>
+            <button class="btn" type="button" data-number>1</button>
+            <button  class="btn" type="button" data-number>2</button>
+            <button class="btn" type="button" data-number>3</button>
+            <button class="btn" type="button" data-number>4</button>
+            <button class="btn" type="button" data-number>5</button>
+            <button class="btn" type="button" data-number>6</button>    
+            <button class="btn" type="button" data-number>8</button>
+            <button class="btn" type="button" data-number>9</button>
+            <button class="btn" type="button" data-number>0</button>
             </div>
             <div class="signs">
-            <button id="btn" type="button">0</button>
-            <button id="btn" type="button">.</button>
-            <button id="btn" type="button">+</button>
-            <button id="btn" type="button">-</button>
-            <button id="btn" type="button">/</button>
-            <button id="btn" type="button">x</button>
-            <button id="btn" type="button">=</button>
+            <button class="btn" type="button">.</button>
+            <button class="btn" type="button" data-operator>+</button>
+            <button class="btn" type="button" id="point">.</button>
+            <button class="btn" type="button" data-operator>-</button>
+            <button class="btn" type="button" data-operator>/</button>
+            <button class="btn" type="button" data-operator>x</button>
+            <button class="btn" type="button" id="equals">=</button>
             
             </div>
             <div class="clear">
-              <button id="clr" type="button">Clear</button>
+              <button id="clear" class="btn" type="button">Clear</button>
             </div>
             
         </div>
@@ -45,3 +46,4 @@
       <script src="script.js"></script>   
 </body>
 </html>
+          
