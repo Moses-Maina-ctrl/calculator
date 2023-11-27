@@ -11,9 +11,7 @@ let value1 = '';
 let value2 = '';
 let sign ='';
 numbers.forEach(button => button.addEventListener("click", () =>{
-    if (value1 != ''){
-        clearResultforSecondValue()
-    }
+    
     joinNumbers(button.textContent)
 }))
 clearBtn.forEach(button => button.addEventListener("click", () =>{
@@ -24,19 +22,23 @@ operator.forEach(button => button.addEventListener("click", () =>{
     if (symbol == 'x'){
         sign ='*';
         firstOperand();
-        displayFirstOperand(symbol);  
+        displayFirstOperand(symbol);
+        clearResultforSecondValue();  
     }else if (symbol == '-'){
         sign = '-'
         firstOperand();
         displayFirstOperand(symbol);
+        clearResultforSecondValue();  
     }else if (symbol == '+'){
         sign = '+'
         firstOperand();
         displayFirstOperand(symbol);
+        clearResultforSecondValue();  
     }else{
         sign = '/'
         firstOperand();
         displayFirstOperand(symbol);
+        clearResultforSecondValue();  
     }
 }))
 function joinNumbers(operand){
