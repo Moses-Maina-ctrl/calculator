@@ -19,8 +19,6 @@ clearBtn.forEach(button => button.addEventListener("click", () =>{
     clear()
 }))
 operator.forEach(button => button.addEventListener("click", () =>{
-    secondOperand()
-    operate()
     if(!sign){
         let symbol = button.textContent;
         if (symbol == 'x'){
@@ -70,6 +68,7 @@ function operate(){
             multiply(value1, value2)
         }else{
             divide(value1, value2)
+
         }
         displayFirstResult()
     } 
@@ -78,8 +77,9 @@ function displayFirstOperand(a){
     equation.textContent += ' ' + String(resultScreen.textContent) + ' ' + String(a);
 }
 function displayFirstResult(){
-    equation.textContent = resultScreen.textContent
-    value1 = equation.textContent
+    
+    let result = resultScreen.textContent
+    equation.textContent += ' = ' + result
 }
 function firstOperand(){
     value1 = parseFloat(resultScreen.textContent)
@@ -101,22 +101,25 @@ function clear(){
 
 function add(val1,val2){
     result = val1 + val2;
+    equation.textContent += val2
     resultScreen.textContent= result
 }
 
 function subtract(val1,val2){
     result = val1 -  val2;
+    equation.textContent += val2
     resultScreen.textContent= result
 }
-
 
 
 
 function multiply(val1,val2){
     result = val1* val2;
+    equation.textContent += val2
     resultScreen.textContent= result
 }
 function divide(val1,val2){
     result =val1/val2
+    equation.textContent += val2
     resultScreen.textContent= result
 }
