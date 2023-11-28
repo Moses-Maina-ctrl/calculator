@@ -4,41 +4,53 @@ const resultScreen =document.querySelector("#answer > p")
 const numbers = document.querySelectorAll('[data-number]')
 const operator = document.querySelectorAll('[data-operator')
 const equals = document.querySelectorAll('#equals')
-const point = document.querySelectorAll('#point')
+const pointBtn = document.querySelectorAll('#point')
 const clearBtn = document.querySelectorAll('#clear');
 
 let value1 = '';
 let value2 = '';
 let sign ='';
+let point = '';
+
 numbers.forEach(button => button.addEventListener("click", () =>{
-    
     joinNumbers(button.textContent)
 }))
 clearBtn.forEach(button => button.addEventListener("click", () =>{
     clear()
 }))
 operator.forEach(button => button.addEventListener("click", () =>{
-    let symbol = button.textContent;
-    if (symbol == 'x'){
-        sign ='*';
+    secondOperand()
+    operate()
+    if(!sign){
+        let symbol = button.textContent;
+        if (symbol == 'x'){
+            sign = '*'
+        }else if (symbol == '-'){ 
+            sign = '-'
+        }else if (symbol == '+'){
+            sign = '+'
+        }else{
+            sign = '/'
+        }
         firstOperand();
         displayFirstOperand(symbol);
-        clearResultforSecondValue();  
-    }else if (symbol == '-'){
-        sign = '-'
-        firstOperand();
-        displayFirstOperand(symbol);
-        clearResultforSecondValue();  
-    }else if (symbol == '+'){
-        sign = '+'
-        firstOperand();
-        displayFirstOperand(symbol);
-        clearResultforSecondValue();  
-    }else{
-        sign = '/'
-        firstOperand();
-        displayFirstOperand(symbol);
-        clearResultforSecondValue();  
+        clearResultforSecondValue();
+        
+}}))
+equals.forEach(button => button.addEventListener('click', () =>{
+    secondOperand();
+    operate()
+    
+}))
+pointBtn.forEach(button => button.addEventListener("click", () =>{
+    if (!point){
+       if(resultScreen.textContent == ''){
+        point = '0.'
+        resultScreen.textContent += point
+       } else{
+        point = '.'
+        resultScreen.textContent+= point
+       }
     }
 }))
 function joinNumbers(operand){
@@ -46,40 +58,65 @@ function joinNumbers(operand){
 } 
 function clearResultforSecondValue(){
     resultScreen.textContent = '';
+    point=  '';
 }  
+function operate(){
+    if(value1 != ''&& value2 != ''){
+        if(sign == '+'){
+            add(value1,value2)
+        }else if (sign == '-'){
+            subtract(value1,value2)
+        }else if (sign == '*'){
+            multiply(value1, value2)
+        }else{
+            divide(value1, value2)
+        }
+        displayFirstResult()
+    } 
+}
 function displayFirstOperand(a){
     equation.textContent += ' ' + String(resultScreen.textContent) + ' ' + String(a);
-   
-     
+}
+function displayFirstResult(){
+    equation.textContent = resultScreen.textContent
+    value1 = equation.textContent
 }
 function firstOperand(){
     value1 = parseFloat(resultScreen.textContent)
     return value1
 }
+function secondOperand(){
+    if (value1!='' &&  resultScreen.textContent != ''){
+        value2 = parseFloat(resultScreen.textContent)
+        return value2
+}}
 function clear(){
     equation.textContent='';
     resultScreen.textContent='';
     value1='';
     value2='';
+    sign ='';
+    point=  '';
 }
 
 function add(val1,val2){
     result = val1 + val2;
+    resultScreen.textContent= result
 }
 
 function subtract(val1,val2){
-    result = val2 -  val2;
+    result = val1 -  val2;
+    resultScreen.textContent= result
 }
+
+
 
 
 function multiply(val1,val2){
-    result = val2 * val2;
+    result = val1* val2;
+    resultScreen.textContent= result
 }
-
-function multiply(val1,val2){
-    result = val2 * val2;
-}
-
-function operate(){
-
+function divide(val1,val2){
+    result =val1/val2
+    resultScreen.textContent= result
 }
