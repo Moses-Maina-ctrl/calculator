@@ -75,13 +75,13 @@ function operate(){
         displayFirstResult()
 }
 function displayFirstOperand(a){
-    equation.textContent += ' ' + String(resultScreen.textContent) + ' ' + String(a);
+    equation.textContent = ' ' + String(resultScreen.textContent) + ' ' + String(a);
 }
 function displayFirstResult(){
     sign =''
     value2=''
     let result = resultScreen.textContent
-    equation.textContent = ' = ' + result +' ; '
+    equation.textContent = ' = ' + result
     value1 = result
     result=''
 }
