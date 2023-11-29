@@ -41,7 +41,8 @@ equals.forEach(button => button.addEventListener('click', () =>{
     
 }))
 pointBtn.forEach(button => button.addEventListener("click", () =>{
-    if (!point){
+    //why is (!point) different to (point == '')//
+    if (point == ''){
        if(resultScreen.textContent == ''){
         point = '0.'
         resultScreen.textContent += point
@@ -70,16 +71,19 @@ function operate(){
             divide(value1, value2)
 
         }
-        displayFirstResult()
     } 
+        displayFirstResult()
 }
 function displayFirstOperand(a){
     equation.textContent += ' ' + String(resultScreen.textContent) + ' ' + String(a);
 }
 function displayFirstResult(){
-    
+    sign =''
+    value2=''
     let result = resultScreen.textContent
-    equation.textContent += ' = ' + result
+    equation.textContent = ' = ' + result +' ; '
+    value1 = result
+    result=''
 }
 function firstOperand(){
     value1 = parseFloat(resultScreen.textContent)
@@ -110,9 +114,6 @@ function subtract(val1,val2){
     equation.textContent += val2
     resultScreen.textContent= result
 }
-
-
-
 function multiply(val1,val2){
     result = val1* val2;
     equation.textContent += val2
@@ -123,3 +124,4 @@ function divide(val1,val2){
     equation.textContent += val2
     resultScreen.textContent= result
 }
+//<link href='https://fonts.googleapis.com/css?family=Nova Square' rel='stylesheet'></link>//
