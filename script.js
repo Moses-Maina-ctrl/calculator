@@ -6,6 +6,7 @@ const operator = document.querySelectorAll('[data-operator')
 const equals = document.querySelectorAll('#equals')
 const pointBtn = document.querySelectorAll('#point')
 const clearBtn = document.querySelectorAll('#clear');
+const delBtn = document.querySelectorAll('#delete')
 
 let value1 = '';
 let value2 = '';
@@ -51,6 +52,9 @@ pointBtn.forEach(button => button.addEventListener("click", () =>{
         resultScreen.textContent+= point
        }
     }
+}))
+delBtn.forEach(button => button.addEventListener('click', () =>{
+    deleteNumber()
 }))
 function joinNumbers(operand){
     resultScreen.textContent += operand   
@@ -120,8 +124,18 @@ function multiply(val1,val2){
     resultScreen.textContent= result
 }
 function divide(val1,val2){
-    result =val1/val2
-    equation.textContent += val2
-    resultScreen.textContent= result
+    if (val2==0){
+        resultScreen.textContent= 'Zero divisor alert!\
+         I\'m good but not \'divide by zero\'\
+             good.Press clear and Try again!'
+    }else{
+        result =val1/val2
+        equation.textContent += val2
+        resultScreen.textContent= result
+    }
+    
 }
-//<link href='https://fonts.googleapis.com/css?family=Nova Square' rel='stylesheet'></link>//
+    
+function deleteNumber() {
+  resultScreen.textContent = resultScreen.textContent.toString().slice(0, -1)
+}
