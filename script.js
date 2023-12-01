@@ -29,7 +29,7 @@ operator.forEach(button => button.addEventListener("click", () =>{
         }else if (symbol == '+'){
             sign = '+'
         }else{
-            sign = '/'
+            sign = '÷'
         }
         firstOperand();
         displayFirstOperand(symbol);
